@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="How to use Drumpling FS-5: eight classic drum machines and an acoustic kit, eight styles at eight levels of complexity, fills and endings, half-time, swing, effects and the keyboard shortcuts." />
+    <meta name="description" content="How to use Drumpling FS-5: eight classic drum machines and an acoustic kit, eight styles at eight levels of complexity in seven time signatures, intros, fills and endings, half-time, swing, a human feel, effects, editing the groove and the keyboard shortcuts." />
     <meta name="theme-color" content="#24211d" />
     <title>How to use · Drumpling FS-5</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff2a14'/%3E%3C/svg%3E" />
@@ -655,7 +655,7 @@
         box-shadow: 0 0 4px var(--amber);
       }
 
-      /* The recordings slider: a slot with five detents and a round red-orange knob */
+      /* The kit slider: a slot with detents and a round black metal knob */
       .slider {
         position: relative;
         width: 70px;
@@ -686,7 +686,9 @@
         width: 22px;
         height: 22px;
         border-radius: 50%;
-        background: radial-gradient(circle at 40% 30%, #ff8b6c, #e0533d 55%, #a8301f);
+        background:
+          radial-gradient(circle at 34% 26%, rgba(255, 255, 255, 0.4), transparent 42%),
+          conic-gradient(from 15deg, #1b1b1b, #5c5c5a, #1f1f1f, #4a4a48, #141414, #626260, #1c1c1c, #444442, #1b1b1b);
         box-shadow: 0 3px 4px rgba(0, 0, 0, 0.6);
       }
 
@@ -947,8 +949,9 @@
             <h1>How to use Drumpling</h1>
             <p class="lead">
               A drum machine with the sounds of eight classics, from the Korg KR-55 to the E-mu SP-1200, and a real
-              acoustic kit. Pick a style, choose how busy the groove should be, and press Start. Throw in fills, end
-              with a proper ending, switch to half-time, swing it, shape it with effects, and hear the same groove on
+              acoustic kit. Pick a style, choose how busy the groove should be and in which time signature, and count
+              it in with an intro. Throw in fills, end with a proper ending, switch to half-time, swing it, loosen it
+              up like a human drummer, shape it with effects, edit it on the display, and hear the same groove on
               another machine.
             </p>
             <a class="open-app" href="../">▶ Open Drumpling</a>
@@ -971,9 +974,9 @@
             <h2><span class="n">01</span> Quick start</h2>
             <ol class="steps">
               <li><strong>Pick a style</strong> with the keys at the bottom: Rock, Pop, Funk, Shuffle, Bossa, Samba, Hip-Hop or Reggae. It brings its own tempo, swing and machine.</li>
-              <li><strong>Press Start / Stop</strong> (or <kbd>Space</kbd>). The groove plays at the style’s usual tempo.</li>
+              <li><strong>Press Start / Stop</strong> (or <kbd>Space</kbd>), or <strong>Intro / End</strong> to count it in with an intro. The groove plays at the style’s usual tempo.</li>
               <li><strong>Move the Complexity slider</strong> from a very simple beat up to a sophisticated one, while it plays.</li>
-              <li><strong>Add a fill</strong> with one of the orange keys, try the groove in <strong>Half time</strong> or on another machine, and finish with the <strong>Ending</strong>.</li>
+              <li><strong>Add a fill</strong> with Fill 1 or Fill 2, try the groove in <strong>Half time</strong>, in another time signature or on another machine, and finish with <strong>Intro / End</strong>, which plays the ending.</li>
             </ol>
           </section>
 
@@ -983,6 +986,8 @@
               <svg class="lcd" viewBox="0 0 640 300" role="img" aria-label="Example of the display, with numbered parts explained below">
                 <text x="20" y="38" font-size="22" font-weight="800" letter-spacing="1.5">OBERHEIM DMX</text>
                 <text x="20" y="54" font-size="11" font-weight="700" letter-spacing="1.5" opacity="0.6">OBERHEIM · 1981</text>
+                <rect x="490" y="21" width="46" height="24" rx="3" fill="none" stroke="#1b2620" stroke-width="1.5" />
+                <text x="513" y="39" font-size="15" font-weight="800" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">4/4</text>
                 <text x="586" y="40" font-size="26" font-weight="800" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace">98</text>
                 <text x="620" y="40" font-size="11" font-weight="700" text-anchor="end" letter-spacing="1.5">BPM</text>
                 <text x="20" y="80" font-size="11" font-weight="700" letter-spacing="1.5">FUNK</text>
@@ -1085,12 +1090,26 @@
             <p class="swipe">← Swipe to see the whole display →</p>
             <ol class="legend">
               <li><strong>The machine</strong> playing, its maker and year.</li>
-              <li><strong>The tempo</strong> in beats per minute.</li>
+              <li><strong>The time signature</strong> and <strong>the tempo</strong> in quarter notes per minute. Click the time signature to pick another (see <a href="#meters">Time signatures</a>).</li>
               <li><strong>The style</strong> and its complexity, one block per level.</li>
-              <li><strong>Swing</strong> while the groove is swung, <strong>½ Time</strong> while half time is on, and <strong>Fill 1</strong>, <strong>Fill 2</strong> or <strong>Ending</strong>: blinking while it waits, steady while it plays. Grooves two bars long show <strong>Bar 1/2</strong> or <strong>2/2</strong>.</li>
-              <li><strong>One bar of the groove</strong>, a row per sound the style uses (BD bass drum, SD snare, HH and OH closed and open hi-hat, RD ride, CR crash, LT, MT, HT toms, RS rim, CP clap, LC and HC congas, CB cowbell, CL clave, SH shaker). The rows stay the same at every complexity, so you see the groove grow. Big blocks are accents, small ones ghost notes; lines mark the beats. A fill or the ending shows here while it waits and plays.</li>
+              <li><strong>Swing</strong> while the groove is swung, <strong>½ Time</strong> while half time is on, and <strong>Intro</strong>, <strong>Fill 1</strong>, <strong>Fill 2</strong> or <strong>Ending</strong>: blinking while it waits, steady while it plays. <strong>↺ Edited</strong> shows once you have changed the groove (see Editing the groove below). Grooves two bars long show <strong>Bar 1/2</strong> or <strong>2/2</strong>.</li>
+              <li><strong>One bar of the groove</strong>, a row per sound the style uses (BD bass drum, SD snare, HH and OH closed and open hi-hat, RD ride, CR crash, LT, MT, HT toms, RS rim, CP clap, LC and HC congas, CB cowbell, CL clave, SH shaker). The rows stay the same at every complexity, so you see the groove grow. Blocks are as tall as the hits are loud: big ones accents, small ones ghost notes; lines mark the beats. A fill or the ending shows here while it waits and plays.</li>
               <li><strong>The playhead</strong> moves along the step being heard.</li>
             </ol>
+            <h3>Editing the groove</h3>
+            <p>
+              The groove on the display is yours to change, while it plays or while it is stopped. Every complexity of
+              every style keeps its own changes, also the next time you come back.
+            </p>
+            <ul>
+              <li><strong>Click a step</strong> to cycle it: normal, accent, ghost note, off.</li>
+              <li><strong>Drag a step up or down</strong> to set how hard it is hit: its MIDI velocity, 1 to 127, one step per pixel. The name of its row shows the velocity while you drag, and the block grows and shrinks with it. An empty step starts from 0; dragged down to 0, it is off again. A click goes on from the nearest of normal, accent and ghost.</li>
+              <li>The grooves are <strong>played, not just written</strong>: hi-hat, ride and shaker lean on the beat and less on the notes between, and no two hits are quite alike. On the acoustic kit each drum was recorded at several strengths, and the velocity picks the recording, so a ghost note on the snare is a real ghost note.</li>
+              <li><strong>Drag a step sideways</strong> (or a row by its name) left or right to play that sound up to 50 ms early or late: a snare laid back, hi-hats pushing. Its notes move off the grid and its name turns dark, like the <strong>Edited</strong> flag; click the name to put the sound back on time. While you drag, the name shows the offset in milliseconds.</li>
+              <li><strong>Drag a ▾ handle</strong> on a beat line to stretch one beat and squeeze the next (each between 50 % and 150 %; the bar keeps its length), so the bar rushes and drags. Changed beats show their length above the grid instead of their number. Double-click a handle to even it out again.</li>
+              <li>While stopped, click <strong>Bar 1/2</strong> to see and edit the other bar of a two-bar groove.</li>
+              <li>Any change shows <strong>↺ Edited</strong>. Click it, then <strong>Revert?</strong> again within three seconds, to go back to the groove as written: steps, timing and beats together.</li>
+            </ul>
           </section>
 
           <section id="controls">
@@ -1106,15 +1125,15 @@
               <div class="card">
                 <div class="visual"><span class="key colored" style="--cap: #ec8a3e"><span class="led"></span></span></div>
                 <div>
-                  <span class="label">Fill 1 · Fill 2</span>
-                  <p>A fill written for the style and complexity. Pressed in the first half of a bar it plays in that bar, later on in the next one; the bar after it starts with a crash. The LED blinks while it waits, stays lit while it plays.</p>
+                  <span class="label">Intro / End</span>
+                  <p>Stopped, it starts the machine with a bar of intro (<kbd>I</kbd> or <kbd>E</kbd>), then the groove from its first bar with a crash. Playing, it plays the style’s ending, in this bar or the next as a fill does, then its final hits on the next downbeat, and the machine stops. Every style has its own, at every complexity and in every time signature, simpler or busier with the level: rock counts in with the sticks and builds to marching toms, pop with handclaps and a swelling snare roll, funk with the hi-hat and kick-and-snare stabs, shuffle with the ride and triplets, bossa with the clave and congas, samba with the shaker, agogô and surdos, hip-hop with a cross-stick and a boom-bap preview, reggae with a cross-stick, a rack-a-tack and a tom roll into the drop. The LED blinks while the intro or the ending waits, then stays lit while it plays.</p>
                 </div>
               </div>
               <div class="card">
                 <div class="visual"><span class="key colored" style="--cap: #ec8a3e"><span class="led"></span></span></div>
                 <div>
-                  <span class="label">Ending</span>
-                  <p>Plays the style’s ending, in this bar or the next as a fill does, then its final hits on the next downbeat, and the machine stops.</p>
+                  <span class="label">Fill 1 · Fill 2</span>
+                  <p>A fill written for the style and complexity. Pressed in the first half of a bar it plays in that bar, later on in the next one; the bar after it starts with a crash. The LED blinks while it waits, stays lit while it plays.</p>
                 </div>
               </div>
               <div class="card">
@@ -1122,6 +1141,13 @@
                 <div>
                   <span class="label">Half time</span>
                   <p>Bass drum and snare stretch over twice the length, so the backbeat falls on 3, while the hi-hats and percussion keep the tempo. Press again for the normal groove.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="visual"><span class="key"><span class="led"></span></span></div>
+                <div>
+                  <span class="label">Click</span>
+                  <p>A metronome click on every beat, higher on the first of the bar (<kbd>M</kbd>). It goes straight to the output, past the effects.</p>
                 </div>
               </div>
               <div class="card">
@@ -1143,6 +1169,13 @@
                 <div>
                   <span class="label">Swing</span>
                   <p>Delays every second note: 50 % is straight, 66 % a triplet feel, 75 % at most. Shuffle and Reggae swing their eighths, the others sixteenths. Picking a style sets its swing: Shuffle 66 %, Reggae 60 %, Hip-Hop 55 %, the rest straight.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="visual"><span class="knob" style="--turn: -100deg"></span></div>
+                <div>
+                  <span class="label">Sloppy</span>
+                  <p>How human the drummer is. At 0 % every hit is on the grid, as a machine plays; 25 % is a pro, 50 % a typical band drummer, 75 % a sloppy one and 100 % a beginner. Every hit moves a little off the grid, and its strength varies more. Like a real player's, the timing doesn't jump about at random: it drifts, the whole kit rushing and dragging together over a few beats or bars, each hand and foot wobbling a little on its own, a touch ahead of the beat.</p>
                 </div>
               </div>
               <div class="card">
@@ -1286,15 +1319,33 @@
               ghost notes, toms and percussion), each with its own two fills and ending. It changes the groove on the
               spot, in time.
             </p>
+            <h3 id="meters">Time signatures</h3>
+            <p>
+              Click the time signature left of the tempo (<strong>4/4</strong>) and pick <strong>3/4</strong>,
+              <strong>4/4</strong>, <strong>5/4</strong>, <strong>7/4</strong>, <strong>5/8</strong>,
+              <strong>6/8</strong> or <strong>7/8</strong>. Every style plays all eight of its complexities in each,
+              with its own sounds and feel: 5/4 runs 3 + 2 with the backbeat on 3 and 5, 7/4 runs 4 + 3, 5/8 counts
+              3 + 2 eighths with the backbeat on the 2, 6/8 has its backbeat on 4, 7/8 counts 2 + 2 + 3. Bossa nova's
+              rim plays the Afro-Cuban bell's figure in 5/8 and 6/8, the samba surdo lands at
+              the end of each group, and reggae's one drop falls on each group's heavy beat. The fills and the
+              ending fit the bar and grow busier with the complexity.
+            </p>
+            <p>
+              The tempo always counts quarter notes, so a 6/8 at 120 has its eighths as fast as 4/4's. The click
+              sounds on each beat: in 5/8 and 7/8 the groups, in 6/8 the two dotted quarters. Swing stays out of
+              5/8, 6/8 and 7/8, whose eighths are grouped already. Your changes to a groove are kept for each style,
+              time signature and complexity.
+            </p>
           </section>
 
           <section id="keyboard">
             <h2><span class="n">07</span> Keyboard</h2>
             <dl class="shortcuts">
               <div><dt><kbd>Space</kbd></dt><dd>Start / stop</dd></div>
+              <div><dt><kbd>I</kbd> <kbd>E</kbd></dt><dd>Intro (stopped) or ending (playing)</dd></div>
               <div><dt><kbd>Q</kbd> <kbd>W</kbd></dt><dd>Fill 1, 2</dd></div>
-              <div><dt><kbd>E</kbd></dt><dd>Ending</dd></div>
               <div><dt><kbd>H</kbd></dt><dd>Half time on / off</dd></div>
+              <div><dt><kbd>M</kbd></dt><dd>Click on / off</dd></div>
               <div><dt><kbd>T</kbd></dt><dd>Tap the tempo</dd></div>
               <div><dt><kbd>G</kbd></dt><dd>Gated reverb on / off</dd></div>
               <div><dt><kbd>S</kbd></dt><dd>Scratch, while held</dd></div>

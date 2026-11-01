@@ -1,6 +1,8 @@
 # Drum machine samples
 
-One folder per kit, one 16-bit mono WAV per voice (`kick.wav`, `snare.wav`, …), made by
+One folder per kit, one 16-bit mono WAV per voice (`kick.wav`, `snare.wav`, …), or, for a voice
+recorded at several strengths (velocity layers, so far the acoustic kit's), one per layer, softest
+first (`snare-1.wav` … `snare-4.wav`; `src/machines.ts` says which velocities play which), made by
 `npm run samples -- <folder> [<folder> …]` (`scripts/make-samples.mjs`) from
 
 - the kits of the archive.org item
@@ -23,7 +25,7 @@ a length limit (the acoustic kit's long cymbal and tom tails), fades the end and
 | `tr909/`    | `Roland TR-909.zip`      | Set3: Bd05, Sn01, Rs01, Clp01, Ch01, Oh10, Ride01, Lt01, Mt01, Ht01; Set2: CRASH1 |
 | `tr707/`    | `Roland TR707.zip`       | Bd1, Sd0, Rim, Hcp, HH_c, HH_o, Rid, Crs, Lt, Mt, Ht, Cow, Tam (shaker) |
 | `sp1200/`   | `EMU SP1200.zip`         | Snare1, Rim, Finger (clap), Clhh1, Ophh1, Ride1, Cymb (crash), Tom2, Tom1, Conga1, Conga3, Cowbell1, Clave1, Cabasa1; the kick from `EMU SP-12.zip` (31.wav) |
-| `acoustic/` | Salamander Drumkit, `OH/` | kick_OH_F_1, snare_OH_F_1, snareStick_OH_F_1 (rim), snare2_OH_MP_1 (clap: the second snare), hihatClosed_OH_F_1, hihatOpen_OH_F_1, ride1_OH_MP_1, crash1_OH_FF_1, loTom_OH_MP_1, hiTom_OH_F_1, cowbell_MP_1, hihatClosed_OH_P_1 (shaker) |
+| `acoustic/` | Salamander Drumkit, `OH/` | layers, softest first: kick_OH_P/F/FF_1, snare_OH_Ghost/MP/F/FF_1, snare2_OH_Ghost/MP/F_1 (clap: the second snare), hihatClosed_OH_P_3 and F_1, hihatOpen_OH_P/F/FF_1, ride1_OH_MP/FF_1, crash1_OH_P/FF_1, loTom_OH_PP/MP/FF_1, hiTom_OH_P/F/FF_1, cowbell_P/MP/FF_1; one sample: snareStick_OH_F_1 (rim), hihatClosed_OH_P_1 (shaker) |
 
 The SP-1200 kit's own kicks (`Kick1`, `Kick2`) are clicks: their body sits at about 150 Hz and
 they stop after 0.13 s. The kick of its predecessor, the SP-12 (the same 12-bit sound), stands in.
