@@ -67,12 +67,6 @@
           overscroll-behavior: none;
         }
       }
-      /* Phones and landscape windows scroll instead of scaling the device down (see fit()) */
-      @media (display-mode: standalone) and (max-width: 720px), (display-mode: standalone) and (orientation: landscape) {
-        html {
-          overflow: auto;
-        }
-      }
       /*
        * On its own page the device sits on a solid warm charcoal, a little lighter than the panel
        * so the case's drop shadow still reads, and matching the theme colour.
@@ -771,7 +765,7 @@
       background: linear-gradient(180deg, #f3ecd8 0 32%, #1a1a1a 32%);
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
     }
-  `;xe([u({type:Number})],J.prototype,"value",2);xe([u({type:Number})],J.prototype,"min",2);xe([u({type:Number})],J.prototype,"max",2);xe([u({type:Number,attribute:"default-value"})],J.prototype,"defaultValue",2);xe([u()],J.prototype,"label",2);xe([u()],J.prototype,"unit",2);xe([u({type:Boolean,reflect:!0})],J.prototype,"disabled",2);J=xe([Ee("value-knob")],J);var Ma=Object.defineProperty,Ea=Object.getOwnPropertyDescriptor,S=(o,e,t,i)=>{for(var s=i>1?void 0:i?Ea(e,t):e,a=o.length-1,n;a>=0;a--)(n=o[a])&&(s=(i?n(e,t,s):n(s))||s);return i&&s&&Ma(e,t,s),s};const Lt=40,At=240,et=100,Ao=80,ie=100,ye=50,To=50,Ho=75,tt=100,Sa=2e3,La=90,Co="drumpling-settings",Po="./howto/",Oo=900,Ro={width:980,height:1080},Aa=720,Ta=200,Do=["q","w"],Pt=800,Ot=560,Ha=28,Io=["touchend","click","keydown"],Ca=L`
+  `;xe([u({type:Number})],J.prototype,"value",2);xe([u({type:Number})],J.prototype,"min",2);xe([u({type:Number})],J.prototype,"max",2);xe([u({type:Number,attribute:"default-value"})],J.prototype,"defaultValue",2);xe([u()],J.prototype,"label",2);xe([u()],J.prototype,"unit",2);xe([u({type:Boolean,reflect:!0})],J.prototype,"disabled",2);J=xe([Ee("value-knob")],J);var Ma=Object.defineProperty,Ea=Object.getOwnPropertyDescriptor,S=(o,e,t,i)=>{for(var s=i>1?void 0:i?Ea(e,t):e,a=o.length-1,n;a>=0;a--)(n=o[a])&&(s=(i?n(e,t,s):n(s))||s);return i&&s&&Ma(e,t,s),s};const Lt=40,At=240,et=100,Ao=80,ie=100,ye=50,To=50,Ho=75,tt=100,Sa=2e3,La=90,Co="drumpling-settings",Po="./howto/",Oo=900,Ro={width:980,height:1080},Aa=200,Ta=.27,Do=["q","w"],Pt=800,Ot=560,Ha=28,Io=["touchend","click","keydown"],Ca=L`
   <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="50" cy="50" r="45" />
     <ellipse cx="50" cy="48" rx="22" ry="7" />
@@ -792,7 +786,7 @@
   <g transform="skewX(-12)" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <g class="ink" stroke-width="10.5">${No}</g>
     <g class="inline" stroke-width="1.3">${No}</g>
-  </g>`;let M=class extends Z{constructor(){super(),this.machineIndex=0,this.styleIndex=0,this.complexity=0,this.tempo=q[0].tempo,this.half=!1,this.meter=Fe,this.metronome=!1,this.viewBar=0,this.patterns=new Map,this.volume=Ao,this.swing=q[0].swing.amount,this.sloppy=0,this.comp=0,this.filter=ye,this.delay=0,this.reverb=0,this.stuttering=!1,this.punch=!1,this.gated=!1,this.scratching=!1,this.tapFlash=!1,this.playing=!1,this.position=-1,this.fillQueued=null,this.fillPlaying=null,this.fillBar=null,this.loading=!0,this.message="",this.engine=new ta,this.taps={first:0,last:-1/0,count:0},this.tapTimer=0,this.sizeObserver=new ResizeObserver(()=>this.fit()),this.fit=()=>{const{style:o}=this;o.transform=o.margin=o.height="",o.setProperty("--spread","0px");const e=getComputedStyle(document.body),t=window.innerHeight-parseFloat(e.paddingTop)-parseFloat(e.paddingBottom),i=this.offsetHeight;if(i<=t){o.height=`${t}px`,this.spread();return}if(window.innerWidth<=Aa||matchMedia("(orientation: landscape)").matches)return;const s=t/i;o.transformOrigin="top center",o.transform=`scale(${s})`,o.margin=`0 0 ${-(1-s)*i}px`},this.unlockAudio=()=>this.engine.unlock(),this.onKeyDown=o=>{if(o.composedPath()[0]instanceof HTMLInputElement||o.ctrlKey||o.metaKey||o.altKey)return;const e=o.key.toLowerCase();if(o.code==="Space")o.preventDefault(),o.repeat||this.togglePlay();else{if(o.repeat)return;Do.includes(e)?this.playFill(Do.indexOf(e)):e==="i"||e==="e"?this.introOrEnd():e==="h"?this.toggleHalf():e==="m"?this.toggleClick():e==="t"?this.tap():e==="r"?this.setStuttering(!0):e==="s"?this.setScratching(!0):e==="g"?this.setGated(!this.gated):o.key==="?"?window.open(Po,"_blank","noopener"):/^[1-9]$/.test(o.key)&&Number(o.key)<=q.length&&this.setStyle(Number(o.key)-1)}},this.onKeyUp=o=>{o.key.toLowerCase()==="r"&&this.setStuttering(!1),o.key.toLowerCase()==="s"&&this.setScratching(!1),o.code==="Space"&&!(o.composedPath()[0]instanceof HTMLInputElement)&&o.preventDefault()},this.loadSettings(),this.engine.volume=this.volume/et,this.engine.tempo=this.tempo,this.engine.setSwing(this.currentStyle.swing.unit,this.swing/100),this.engine.sloppy=this.sloppy/tt,this.engine.comp=this.comp/ie,this.engine.filter=(this.filter-ye)/ye,this.engine.delay=this.delay/ie,this.engine.reverb=this.reverb/ie,this.applyGroove(),this.engine.onStep=(o,e)=>{this.position=o,this.fillQueued=e.queued,this.fillPlaying=e.playing,this.fillBar=e.fillBar},this.engine.onStop=()=>{this.position=-1,this.fillQueued=this.fillPlaying=this.fillBar=null,this.playing=!1},this.loadMachine()}connectedCallback(){super.connectedCallback(),window.addEventListener("keydown",this.onKeyDown);for(const o of Io)window.addEventListener(o,this.unlockAudio,!0);window.addEventListener("keyup",this.onKeyUp),window.addEventListener("resize",this.fit),this.sizeObserver.observe(this),Oa()}firstUpdated(){this.fit()}disconnectedCallback(){super.disconnectedCallback(),window.removeEventListener("keydown",this.onKeyDown);for(const o of Io)window.removeEventListener(o,this.unlockAudio,!0);window.removeEventListener("keyup",this.onKeyUp),window.removeEventListener("resize",this.fit),this.sizeObserver.disconnect(),this.engine.stop()}get machine(){return Oe[this.machineIndex]}get currentStyle(){return q[this.styleIndex]}get groove(){return Cs(this.currentStyle,this.complexity,this.meter,this.half,this.pattern)}get pattern(){return this.patterns.get(this.patternKey())??Ct(this.currentStyle,this.complexity,this.meter)}patternKey(o=this.currentStyle,e=this.complexity,t=this.meter){return`${o.id}/${t.id}/${e}`}setMeter(o){this.meter=o,this.viewBar=0,this.applyGroove()}edit(o){const e=new Map(this.patterns);$s(o,Ct(this.currentStyle,this.complexity,this.meter))?e.delete(this.patternKey()):e.set(this.patternKey(),o),this.patterns=e,this.applyGroove()}editStep(o,e){const t=Ss(this.pattern,this.half,o,this.shownBar().number*this.groove.bar+e);t&&this.edit(t)}setVelocity(o,e,t){const i=Ls(this.pattern,this.half,o,this.shownBar().number*this.groove.bar+e,t);i&&this.edit(i)}revert(){const o=new Map(this.patterns);o.delete(this.patternKey()),this.patterns=o,this.applyGroove()}nextBar(){const{number:o,bars:e}=this.shownBar();this.viewBar=(o+1)%e}shownBar(){const{groove:o}=this,e=o.length/o.bar,t=this.fillPlaying??this.fillQueued,i=t!==null&&this.fillBar!==null?this.fillBar:this.position<0?Math.min(this.viewBar,e-1):Math.floor(this.position/o.bar),s=t!==null?Ps(o,i,t):Os(o,i),a=Wo.filter(n=>o.voices.has(n));return{bar:s,rows:a,number:i,bars:e}}render(){const{machine:o,currentStyle:e}=this,t=this.shownBar(),{nudge:i,warp:s}=this.groove,a=this.fillPlaying!==null||this.fillQueued!==null;return G`
+  </g>`;let M=class extends Z{constructor(){super(),this.machineIndex=0,this.styleIndex=0,this.complexity=0,this.tempo=q[0].tempo,this.half=!1,this.meter=Fe,this.metronome=!1,this.viewBar=0,this.patterns=new Map,this.volume=Ao,this.swing=q[0].swing.amount,this.sloppy=0,this.comp=0,this.filter=ye,this.delay=0,this.reverb=0,this.stuttering=!1,this.punch=!1,this.gated=!1,this.scratching=!1,this.tapFlash=!1,this.playing=!1,this.position=-1,this.fillQueued=null,this.fillPlaying=null,this.fillBar=null,this.loading=!0,this.message="",this.engine=new ta,this.taps={first:0,last:-1/0,count:0},this.tapTimer=0,this.sizeObserver=new ResizeObserver(()=>this.fit()),this.fit=()=>{const{style:o}=this;o.transform=o.margin=o.height="",o.setProperty("--spread","0px");const e=getComputedStyle(document.body),t=window.innerHeight-parseFloat(e.paddingTop)-parseFloat(e.paddingBottom),i=this.offsetHeight;if(i<=t){o.height=`${t}px`,this.spread();return}const s=t/i;o.transformOrigin="top center",o.transform=`scale(${s})`,o.margin=`0 0 ${-(1-s)*i}px`},this.unlockAudio=()=>this.engine.unlock(),this.onKeyDown=o=>{if(o.composedPath()[0]instanceof HTMLInputElement||o.ctrlKey||o.metaKey||o.altKey)return;const e=o.key.toLowerCase();if(o.code==="Space")o.preventDefault(),o.repeat||this.togglePlay();else{if(o.repeat)return;Do.includes(e)?this.playFill(Do.indexOf(e)):e==="i"||e==="e"?this.introOrEnd():e==="h"?this.toggleHalf():e==="m"?this.toggleClick():e==="t"?this.tap():e==="r"?this.setStuttering(!0):e==="s"?this.setScratching(!0):e==="g"?this.setGated(!this.gated):o.key==="?"?window.open(Po,"_blank","noopener"):/^[1-9]$/.test(o.key)&&Number(o.key)<=q.length&&this.setStyle(Number(o.key)-1)}},this.onKeyUp=o=>{o.key.toLowerCase()==="r"&&this.setStuttering(!1),o.key.toLowerCase()==="s"&&this.setScratching(!1),o.code==="Space"&&!(o.composedPath()[0]instanceof HTMLInputElement)&&o.preventDefault()},this.loadSettings(),this.engine.volume=this.volume/et,this.engine.tempo=this.tempo,this.engine.setSwing(this.currentStyle.swing.unit,this.swing/100),this.engine.sloppy=this.sloppy/tt,this.engine.comp=this.comp/ie,this.engine.filter=(this.filter-ye)/ye,this.engine.delay=this.delay/ie,this.engine.reverb=this.reverb/ie,this.applyGroove(),this.engine.onStep=(o,e)=>{this.position=o,this.fillQueued=e.queued,this.fillPlaying=e.playing,this.fillBar=e.fillBar},this.engine.onStop=()=>{this.position=-1,this.fillQueued=this.fillPlaying=this.fillBar=null,this.playing=!1},this.loadMachine()}connectedCallback(){super.connectedCallback(),window.addEventListener("keydown",this.onKeyDown);for(const o of Io)window.addEventListener(o,this.unlockAudio,!0);window.addEventListener("keyup",this.onKeyUp),window.addEventListener("resize",this.fit),this.sizeObserver.observe(this),Oa()}firstUpdated(){this.fit()}disconnectedCallback(){super.disconnectedCallback(),window.removeEventListener("keydown",this.onKeyDown);for(const o of Io)window.removeEventListener(o,this.unlockAudio,!0);window.removeEventListener("keyup",this.onKeyUp),window.removeEventListener("resize",this.fit),this.sizeObserver.disconnect(),this.engine.stop()}get machine(){return Oe[this.machineIndex]}get currentStyle(){return q[this.styleIndex]}get groove(){return Cs(this.currentStyle,this.complexity,this.meter,this.half,this.pattern)}get pattern(){return this.patterns.get(this.patternKey())??Ct(this.currentStyle,this.complexity,this.meter)}patternKey(o=this.currentStyle,e=this.complexity,t=this.meter){return`${o.id}/${t.id}/${e}`}setMeter(o){this.meter=o,this.viewBar=0,this.applyGroove()}edit(o){const e=new Map(this.patterns);$s(o,Ct(this.currentStyle,this.complexity,this.meter))?e.delete(this.patternKey()):e.set(this.patternKey(),o),this.patterns=e,this.applyGroove()}editStep(o,e){const t=Ss(this.pattern,this.half,o,this.shownBar().number*this.groove.bar+e);t&&this.edit(t)}setVelocity(o,e,t){const i=Ls(this.pattern,this.half,o,this.shownBar().number*this.groove.bar+e,t);i&&this.edit(i)}revert(){const o=new Map(this.patterns);o.delete(this.patternKey()),this.patterns=o,this.applyGroove()}nextBar(){const{number:o,bars:e}=this.shownBar();this.viewBar=(o+1)%e}shownBar(){const{groove:o}=this,e=o.length/o.bar,t=this.fillPlaying??this.fillQueued,i=t!==null&&this.fillBar!==null?this.fillBar:this.position<0?Math.min(this.viewBar,e-1):Math.floor(this.position/o.bar),s=t!==null?Ps(o,i,t):Os(o,i),a=Wo.filter(n=>o.voices.has(n));return{bar:s,rows:a,number:i,bars:e}}render(){const{machine:o,currentStyle:e}=this,t=this.shownBar(),{nudge:i,warp:s}=this.groove,a=this.fillPlaying!==null||this.fillQueued!==null;return G`
       <div class="chassis">
         <div class="cheek left"></div>
         <div class="device">
@@ -1360,7 +1354,7 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      min-height: var(--min-display, ${Ta}px);
+      min-height: var(--min-display, ${Aa}px);
       border-radius: 4px;
       background:
         var(--grain),
@@ -2137,11 +2131,11 @@
     }
 
     /*
-     * Phones in portrait: every gap tightened so the device fits the screen without scrolling; no
-     * readouts under the sliders (the LCD names the machine), the slider names beside the sliders
+     * Held upright at any size, and landscape windows up to 960px tall: every gap tightened so the
+     * device fits the screen with a display of a good size; no readouts under the sliders (the LCD
+     * names the machine), Kit and Complexity side by side
      */
-    @media (max-width: 720px) and (orientation: portrait),
-      (orientation: landscape) and (max-height: 960px) {
+    @media (orientation: portrait), (orientation: landscape) and (max-height: 960px) {
       :host {
         --min-display: 130px;
       }
@@ -2264,18 +2258,18 @@
       }
       .styles {
         padding-top: 0.6rem;
-        padding-bottom: 0.75rem;
-        row-gap: 0.55rem;
+        padding-bottom: 0.5rem;
+        row-gap: 0.5rem;
       }
       .style-cell {
         gap: 0.4rem;
       }
       footer {
-        height: 18px;
+        height: 14px;
       }
     }
     /* Short phones: smaller keys and knobs still */
-    @media (max-width: 720px) and (orientation: portrait) and (max-height: 700px) {
+    @media (max-width: 720px) and (orientation: portrait) and (max-height: 780px) {
       :host {
         --min-display: 125px;
       }
@@ -2306,6 +2300,18 @@
       }
       footer {
         height: 12px;
+      }
+    }
+    /* Held upright, the display always at least PORTRAIT_DISPLAY of the window's height */
+    @media (orientation: portrait) {
+      :host {
+        --min-display: ${Ta*100}vh;
+      }
+    }
+    /* Held upright and narrow (tablets): no room in the slim footer for the keyboard hints on one line */
+    @media (orientation: portrait) and (max-width: 900px) {
+      .hints {
+        display: none;
       }
     }
 
