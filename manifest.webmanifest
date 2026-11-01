@@ -1,0 +1,17 @@
+{
+  "id": "/drumpling-app/",
+  "name": "Drumpling FS-5",
+  "short_name": "Drumpling",
+  "description": "A vintage-style drum machine from the FS family.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#24211d",
+  "theme_color": "#24211d",
+  "categories": ["music", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
